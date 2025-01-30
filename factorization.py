@@ -9,5 +9,5 @@ def prime_divisors(given_number):
     return result
 
 
-desired_number = int(input())
+desired_number = int(input("please enter your desired number: "))
 print(*prime_divisors(desired_number), sep="\n")
