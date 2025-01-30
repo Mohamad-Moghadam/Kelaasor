@@ -4,5 +4,5 @@ def triangle(size):
         print()
 
 
-desired_number = int(input())
+desired_number = int(input("enter the number you want: "))
 triangle(desired_number)
