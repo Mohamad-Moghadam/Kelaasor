@@ -15,5 +15,5 @@ def draw_double_diamond(the_number):
         )
 
 
-entered_number = int(input())
+entered_number = int(input("please enter a number: "))
 draw_double_diamond(entered_number)
