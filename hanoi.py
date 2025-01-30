@@ -9,5 +9,5 @@ def tower_of_hanoi(desired_loops, starting_point, auxiliary, destination):
     tower_of_hanoi(desired_loops - 1, auxiliary, starting_point, destination)
 
 
-given_number = int(input())
+given_number = int(input("how many? "))
 tower_of_hanoi(given_number, "A", "B", "C")
