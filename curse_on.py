@@ -4,5 +4,5 @@ def curse_on(the_name):
     return new_name
 
 
-the_name_of_the_folder = input()
+the_name_of_the_folder = input("please write your desired text: ")
 print(curse_on(the_name_of_the_folder))
