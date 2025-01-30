@@ -10,5 +10,5 @@ def echo_effect(word):
     return final
 
 
-input_word = input()
+input_word = input("enter the word you heard: ")
 print(*echo_effect(input_word), sep="\n")
