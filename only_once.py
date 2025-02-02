@@ -5,11 +5,15 @@ def only_once(a, b):
         difference = abs(filtered_list[i][0] - filtered_list[i][1])
         next_difference = abs(filtered_list[i + 1][0] - filtered_list[i + 1][1])
         if next_difference == difference + 1:
-            return "Yes"
+            print("Yes")
         else:
-            return "No"
+            print("Yes")
 
 
-first_list = list(map(int, input("")))
-second_list = list(map(int, input("")))
-print(only_once(first_list, second_list))
+first_list = input()
+second_list = input()
+first_list = first_list.replace(" ", "")
+second_list = second_list.replace(" ", "")
+first_list = list(map(int, first_list))
+second_list = list(map(int, second_list))
+only_once(first_list, second_list)
