@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def recognize(name):
-    name = name.replace(" ", "")
+    name = name.replace(" ", "").lower()
     final = []
     number_of_index = Counter(name)
     for key, value in number_of_index.items():
