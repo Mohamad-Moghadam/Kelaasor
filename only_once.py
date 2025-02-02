@@ -5,12 +5,13 @@ def only_once(a, b):
         return "Yes"
     differences = [abs(item[0] - item[1]) for item in filtered_list]
     for i in range(len(differences) - 1):
-        if differences[i] != differences[i + 1]:
-            return "No"
-        else:
-            return "Yes"
+        final_difference = differences[i] - differences[i + 1]
+    if final_difference == 0:
+        print("Yes")
+    else:
+        print("No")
 
 
 first_list = list(map(int, input().split()))
 second_list = list(map(int, input().split()))
-print(only_once(first_list, second_list))
+only_once(first_list, second_list)
