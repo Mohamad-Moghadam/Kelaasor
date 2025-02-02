@@ -2,13 +2,29 @@ def only_once(a, b):
     if len(a) != len(b):
         print("NO")
         return
-    final_list = list(zip(a, b))
-    filtered_list = [item for item in final_list if item[0] != item[1]]
-    if not filtered_list:
+    differences = [b[i] - a[i] for i in range(len(a))]
+    start = -1
+    end = -1
+    for i in range(len(differences)):
+        if differences[i] != 0:
+            start = i
+            break
+    if start == -1:
         print("YES")
         return
-    differences = [abs(item[0] - item[1]) for item in filtered_list]
-    if all(diff == differences[0] for diff in differences):
+    for i in range(len(differences) - 1, -1, -1):
+        if differences[i] != 0:
+            end = i
+            break
+    k = differences[start]
+    for i in range(start, end + 1):
+        if differences[i] != k:
+            print("NO")
+            return
+
+    if all(d == 0 for d in differences[:start]) and all(
+        d == 0 for d in differences[end + 1 :]
+    ):
         print("YES")
     else:
         print("NO")
