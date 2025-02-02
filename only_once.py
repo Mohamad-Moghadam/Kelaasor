@@ -1,4 +1,7 @@
 def only_once(a, b):
+    if len(a) != len(b):
+        print("NO")
+        return
     final_list = list(zip(a, b))
     filtered_list = [item for item in final_list if item[0] != item[1]]
     if not filtered_list:
