@@ -1,9 +1,9 @@
 def weird_sequence(desired_number):
     final_sequence = []
-    counter = 0
-    while len(final_sequence) < desired_number:
+    for counter in range(desired_number):
         final_sequence.extend(str(10**counter))
-        counter += 1
+        if len(final_sequence) >= desired_number:
+            break
     return final_sequence[desired_number - 1]
 
 
