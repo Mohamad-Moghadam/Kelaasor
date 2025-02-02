@@ -7,13 +7,9 @@ def only_once(a, b):
         if next_difference == difference + 1:
             print("Yes")
         else:
-            print("Yes")
+            print("No")
 
 
-first_list = input()
-second_list = input()
-first_list = first_list.replace(" ", "")
-second_list = second_list.replace(" ", "")
-first_list = list(map(int, first_list))
-second_list = list(map(int, second_list))
+first_list = list(map(int, input().split()))
+second_list = list(map(int, input().split()))
 only_once(first_list, second_list)
