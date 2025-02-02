@@ -13,7 +13,7 @@ number_of_kids = list(map(int, input().split()))
 moments = number_of_kids[1]
 order = input().strip()
 
-for _ in range(moments):
+for kid in range(moments):
     order = kindergarten(order)
 
 print(order)
