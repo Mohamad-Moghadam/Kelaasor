@@ -3,6 +3,8 @@ def lost_person(num):
         for i in range(len(num)):
             if i > 0 and num[i] - num[i - 1] != 1:
                 print(num[i - 1] + 1)
+            else:
+                print(num[-1] + 1)
     else:
         print(1)
 
