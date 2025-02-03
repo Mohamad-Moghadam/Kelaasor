@@ -42,10 +42,8 @@ def sort(d):
     zero = max(z1, z2, z3)
 
     ones_list = [i for i in d if i == 1]
-    print(len(zero_list_beginning))
-    print(len(zero_list_middle))
-    print(len(zero_list_end))
     combination = len(ones_list) + zero
+    print(combination)
 
 
 the_dishes = list(map(int, input().split()))
