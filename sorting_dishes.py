@@ -9,32 +9,26 @@ def sort(d):
             zero_list_beginning.append(i)
             i += 1
 
-    zero_list_middle = []
-    starring_point = None
-    max_middle_zeros = 0
+    first_one = None
     for i in range(len(d)):
         if d[i] == 1:
-            starring_point = i + 1
+            first_one = i
             break
 
-    stopping_point = None
+    last_one = None
     for i in range(len(d) - 1, -1, -1):
         if d[i] == 1:
-            stopping_point = i - 1
+            last_one = i
             break
-    current_count = 0
-    if (
-        starring_point is not None
-        and stopping_point is not None
-        and starring_point < stopping_point
-    ):
-        for i in range(starring_point, stopping_point + 1):
-            if d[i] == 0:
-                current_count += 1
-            else:
-                max_middle_zeros = max(max_middle_zeros, current_count)
-                current_count = 0
-        max_middle_zeros = max(max_middle_zeros, current_count)
+
+    max_zero_sequence = 0
+    current_zeros = 0
+    for i in range(first_one, last_one + 1):
+        if d[i] == 0:
+            current_zeros += 1
+        else:
+            zero_list_middle = list(max(max_zero_sequence, current_zeros))
+            current_zeros = 0
 
     zero_list_end = []
     if d[-1] == 0:
