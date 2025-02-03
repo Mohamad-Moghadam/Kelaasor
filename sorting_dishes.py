@@ -44,7 +44,7 @@ def sort(d):
     ones_list = [i for i in d if i == 1]
     print(len(zero_list_beginning))
     print(len(zero_list_middle))
-    print(len(zero_list_middle))
+    print(len(zero_list_end))
     combination = len(ones_list) + zero
 
 
