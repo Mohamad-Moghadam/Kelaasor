@@ -46,7 +46,6 @@ def sort(d):
 
     ones_list = [i for i in d if i == 1]
     combination = len(ones_list) + zero
-    print(zero_list_middle)
     print(combination)
 
 
