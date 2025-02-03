@@ -26,14 +26,14 @@ def sort(d):
         for i in range(starring_point, stopping_point + 1):
             if d[i] == 0:
                 zero_list_middle.append(i)
+            else:
+                break
 
     zero_list_end = []
     if d[-1] == 0:
-        for i in range(len(d), -1, -1):
-            if i == 0:
+        for i in range(len(d) - 1, -1, -1):
+            if d[i] == 0:
                 zero_list_end.append(i)
-            else:
-                break
 
     z1 = len(zero_list_beginning)
     z2 = len(zero_list_middle)
