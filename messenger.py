@@ -1,12 +1,17 @@
-from collections import Counter
-
-
 def messenger(m):
-    numb_of_repeats = Counter(m)
-    output = [
-        char + str(count) if char != " " else " "
-        for char, count in numb_of_repeats.items()
-    ]
+    seen = {}
+    output = []
+
+    for char in m:
+        if char != " ":
+            if char not in seen:
+                seen[char] = 1
+            else:
+                seen[char] += 1
+            output.append(f"{char}{seen[char]}")
+        else:
+            output.append(" ")
+
     final = "".join(output)
     print(final)
 
