@@ -27,7 +27,7 @@ def sort(d):
         if d[i] == 0:
             current_zeros += 1
         else:
-            zero_list_middle = list(max(max_zero_sequence, current_zeros))
+            zero_list_middle = max(max_zero_sequence, current_zeros)
             current_zeros = 0
 
     zero_list_end = []
@@ -39,13 +39,14 @@ def sort(d):
                 break
 
     z1 = len(zero_list_beginning)
-    z2 = len(zero_list_middle)
+    z2 = zero_list_middle
     z3 = len(zero_list_end)
 
     zero = max(z1, z2, z3)
 
     ones_list = [i for i in d if i == 1]
     combination = len(ones_list) + zero
+    print(zero_list_middle)
     print(combination)
 
 
