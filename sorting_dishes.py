@@ -15,17 +15,25 @@ def sort(d):
         if d[i] == 1:
             starring_point = i + 1
             break
-    if starring_point is not None:
-        for i in range(starring_point, len(d)):
-            while i < len(d) and d[i] == 0:
+
+    stopping_point = None
+    for i in range(len(d) - 1, -1, -1):
+        if d[i] == 1:
+            stopping_point = i - 1
+            break
+
+    if starring_point is not None and stopping_point is not None:
+        for i in range(starring_point, stopping_point + 1):
+            if d[i] == 0:
                 zero_list_middle.append(i)
 
     zero_list_end = []
     if d[-1] == 0:
-        i = len(d) - 1
-        while i >= 0 and d[i] == 0:
-            zero_list_end.append(i)
-            i -= 1
+        for i in range(len(d), -1, -1):
+            if i == 0:
+                zero_list_end.append(i)
+            else:
+                break
 
     z1 = len(zero_list_beginning)
     z2 = len(zero_list_middle)
@@ -34,12 +42,10 @@ def sort(d):
     zero = max(z1, z2, z3)
 
     ones_list = [i for i in d if i == 1]
-    print(zero)
-    print(zero_list_beginning)
-    print(zero_list_middle)
-    print(zero_list_middle)
+    print(len(zero_list_beginning))
+    print(len(zero_list_middle))
+    print(len(zero_list_middle))
     combination = len(ones_list) + zero
-    print(combination)
 
 
 the_dishes = list(map(int, input().split()))
