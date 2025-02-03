@@ -1,12 +1,12 @@
 def lost_person(num):
-    if num[0] == 1:
-        for i in range(len(num)):
-            if i > 0 and num[i] - num[i - 1] != 1:
-                print(num[i - 1] + 1)
-            else:
-                print(num[-1] + 1)
-    else:
+    if num[0] != 1:
         print(1)
+        return
+    for i in range(1, len(num)):
+        if num[i] - num[i - 1] != 1:
+            print(num[i - 1] + 1)
+            return
+    print(num[-1] + 1)
 
 
 numbers = list(map(int, input().split()))
