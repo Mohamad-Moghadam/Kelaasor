@@ -1,5 +1,4 @@
 def T_shirt(wanted_shirts, size):
-    print(wanted_shirts, size)
     given_shirts = []
     for item in range(len(size)):
         if size[item] == "S":
