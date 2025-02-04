@@ -12,7 +12,7 @@ def T_shirt(wanted_shirts, size):
             wanted_shirts[2] -= 1
         else:
             given_shirts.append("No Shirt")
-            break
+            continue
         if item == "M" and wanted_shirts[1] > 0:
             given_shirts.append("M")
             wanted_shirts[1] -= 1
@@ -27,7 +27,7 @@ def T_shirt(wanted_shirts, size):
             wanted_shirts[3] -= 1
         else:
             given_shirts.append("No Shirt")
-            break
+            continue
         if item == "L" and wanted_shirts[2] > 0:
             given_shirts.append("L")
             wanted_shirts[2] -= 1
@@ -45,7 +45,7 @@ def T_shirt(wanted_shirts, size):
             wanted_shirts[0] -= 1
         else:
             given_shirts.append("No Shirt")
-            break
+            continue
         if item == "XXL" and wanted_shirts[4] > 0:
             given_shirts.append("XXL")
             wanted_shirts[4] -= 1
@@ -57,7 +57,7 @@ def T_shirt(wanted_shirts, size):
             wanted_shirts[2] -= 1
         else:
             given_shirts.append("No Shirt")
-            break
+            continue
     print("\n".join(given_shirts))
 
 
@@ -66,4 +66,5 @@ s_m_l_xl_xxl = list(map(int, input().split()))
 num_of_people = int(input())
 for i in range(num_of_people):
     size.append(input().split())
-T_shirt(s_m_l_xl_xxl, size)
+requests = "".join(size)
+T_shirt(s_m_l_xl_xxl, requests)
