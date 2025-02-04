@@ -1,25 +1,30 @@
 def absolute(num):
     c = []
+    final = []
     start = 0
-    for i in range(len(num) - 1):
+    for i in range(len(num)):
         for j in range(len(num[i])):
             if num[i][j] >= 0:
                 start += num[i][j]
                 c.append(start)
-            elif num[i][j] < 0 and num[i][j + 1] < 0:
+            elif num[i][j] < 0 and j + 1 < len(num[i]) and num[i][j + 1] < 0:
                 num[i][j] += num[i][j + 1]
                 start += num[i][j]
-                if start < 0:
-                    start = -start
-                    c.append(start)
+                if (j + 1 > len(num[i]) or num[i][j + 1] < 0) and num[i][j] == num[i][
+                    -1
+                ]:
+                    if start < 0:
+                        start = abs(start)
+                        c.append(start)
             elif num[i][j] < 0:
                 start += num[i][j]
                 if start < 0:
-                    start = -start
+                    start = abs(start)
                     c.append(start)
+        del c[:-1]
+        final.extend(c)
         start = 0
-    print(start)
-    print(c)
+    print(final)
 
 
 given_numbers = []
