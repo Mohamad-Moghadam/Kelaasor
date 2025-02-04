@@ -47,6 +47,21 @@ def T_shirt(wanted_shirts, size):
                 wanted_shirts[0] -= 1
             else:
                 given_shirts.append("No Shirt")
+        elif size[item] == "XL":
+            if wanted_shirts[3] > 0:
+                given_shirts.append("XL")
+                wanted_shirts[3] -= 1
+            elif size[item] == "XL" and wanted_shirts[4] > 0:
+                given_shirts.append("XXL")
+                wanted_shirts[4] -= 1
+            elif size[item] == "XL" and wanted_shirts[2] > 0:
+                given_shirts.append("L")
+                wanted_shirts[2] -= 1
+            elif size[item] == "XL" and wanted_shirts[1] > 0:
+                given_shirts.append("M")
+                wanted_shirts[1] -= 1
+            else:
+                given_shirts.append("No Shirt")
         elif size[item] == "XXL":
             if wanted_shirts[4] > 0:
                 given_shirts.append("XXL")
