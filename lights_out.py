@@ -3,6 +3,13 @@ import copy
 
 def lights_out(a, b, c):
 
+    for i in range(3):
+        if a[i] % 2 == 1 and b[i] % 2 == 1 and c[i] % 2 == 1:
+            print("0 0 0")
+            print("0 0 0")
+            print("0 0 0")
+            return
+
     row1 = copy.deepcopy(a)
     row2 = copy.deepcopy(b)
     row3 = copy.deepcopy(c)
