@@ -14,8 +14,5 @@ def bracket(b):
                 print(False)
 
 
-brackets = input()
-new_brackets = " ".join(brackets)
-bracket_list = new_brackets.split()
-print(bracket_list)
-bracket(bracket_list)
+brackets = input().strip()
+bracket(brackets)
