@@ -1,4 +1,7 @@
 def bracket(b):
+    if not b:
+        print(False)
+        return
     if len(b) % 2 == 0:
         for i in range(len(b) // 2):
             if i == 0:
