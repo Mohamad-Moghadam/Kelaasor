@@ -1,8 +1,11 @@
+import copy
+
+
 def lights_out(a, b, c):
 
-    row1 = a[:]
-    row2 = b[:]
-    row3 = c[:]
+    row1 = copy.deepcopy(a)
+    row2 = copy.deepcopy(b)
+    row3 = copy.deepcopy(c)
 
     if a[0] > 0:
         row1[1] += a[0]
