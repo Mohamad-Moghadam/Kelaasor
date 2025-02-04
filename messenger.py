@@ -9,11 +9,14 @@ def messenger(m):
                 chars.append(m[i] + str(c))
                 c = 1
         else:
-            i += 1
-        chars.append(m[-1] + str(c))
-
-    final = "".join(chars)
+            chars.append(" ")
+        if m[-1] != " ":
+            chars.append(m[-1] + str(c))
+        else:
+            chars.append(" ")
     print(chars)
+    final = "".join(chars)
+    print(final)
 
 
 message = input().split()
