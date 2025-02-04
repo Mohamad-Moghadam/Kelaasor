@@ -10,10 +10,10 @@ def messenger(m):
                 c = 1
         else:
             chars.append(" ")
-        if m[-1] != " ":
-            chars.append(m[-1] + str(c))
-        else:
-            chars.append(" ")
+    if m[-1] != " ":
+        chars.append(m[-1] + str(c))
+    else:
+        chars.append(" ")
     print(chars)
     final = "".join(chars)
     print(final)
