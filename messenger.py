@@ -1,20 +1,14 @@
 def messenger(m):
-    seen = {}
-    output = []
+    i = 0
+    while i < len(m):
+        c = 1
+        while i + 1 < len(m) and m[i] == m[i + 1]:
+            c += 1
+            i += 1
+        m.insert(i + 1, str(c))
 
-    for char in m:
-        if char != " ":
-            if char not in seen:
-                seen[char] = 1
-            else:
-                seen[char] += 1
-            output.append(f"{char}{seen[char]}")
-        else:
-            output.append(" ")
-
-    final = "".join(output)
-    print(final)
+    print(" ".join(m))
 
 
-message = input()
+message = input().split()
 messenger(message)
