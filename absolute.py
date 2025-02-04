@@ -8,14 +8,10 @@ def absolute(num):
                 start += num[i][j]
                 c.append(start)
             elif num[i][j] < 0 and j + 1 < len(num[i]) and num[i][j + 1] < 0:
-                num[i][j] += num[i][j + 1]
-                start += num[i][j]
-                if (j + 1 > len(num[i]) or num[i][j + 1] < 0) and num[i][j] == num[i][
-                    -1
-                ]:
-                    if start < 0:
-                        start = abs(start)
-                        c.append(start)
+                start += num[i][j] + num[i][j + 1]
+                if j + 1 > len(num[i]) or num[i][j + 1] > 0:
+                    start = abs(start)
+                    c.append(start)
             elif num[i][j] < 0:
                 start += num[i][j]
                 if start < 0:
