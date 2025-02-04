@@ -2,6 +2,10 @@ def only_once(a, b):
     if len(a) != len(b):
         print("NO")
         return
+    for i in range(len(a)):
+        if a[i] > b[i]:
+            print("NO")
+            return
     differences = [b[i] - a[i] for i in range(len(a))]
     start = -1
     end = -1
