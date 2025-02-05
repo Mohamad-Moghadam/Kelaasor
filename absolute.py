@@ -6,7 +6,7 @@ def absolute(num):
     for i in range(len(num)):
         for j in range(len(num[i])):
             add += num[i][j]
-            absolute += abs(num[i][j])
+            absolute += abs(absolute + num[i][j])
             maximum = max(absolute, add)
             absolute = maximum
             add = maximum
