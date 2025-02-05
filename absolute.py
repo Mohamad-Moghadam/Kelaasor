@@ -1,26 +1,28 @@
-def absolute(num):
-    c = []
-    add = 0
-    absolute = 0
-    maximum = 0
+import copy
+
+
+def absolute(num, tree, first):
+    if 2 ** len(first) == len(tree):
+        return max(tree)
+
     for i in range(len(num)):
-        for j in range(len(num[i])):
-            add += num[i][j]
-            absolute += abs(num[i][j])
-            maximum = max(absolute, add)
-            absolute = maximum
-            add = maximum
-        c.append(maximum)
-        maximum = 0
-        add = 0
-        absolute = 0
-    c = list(map(str, c))
-    final = "\n".join(c)
-    print(final)
+        current_num = num[i]
+        new_tree = []
+
+        for k in range(len(tree)):
+            add = tree[k] + current_num
+            absl = abs(tree[k] + current_num)
+
+            new_tree.append(add)
+            new_tree.append(absl)
+
+        new_num = num[:i] + num[i + 1 :]
+        return absolute(new_num, new_tree, first)
 
 
-given_numbers = []
-number_of_tests = int(input())
-for i in range(number_of_tests):
-    given_numbers.append(list(map(int, input().split())))
-absolute(given_numbers)
+given_numbers = list(map(int, input().split()))
+tree = [0]
+first = given_numbers.copy()
+
+result = absolute(given_numbers, tree, first)
+print(result)
