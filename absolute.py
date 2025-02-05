@@ -20,9 +20,18 @@ def absolute(num, tree, first):
         return absolute(new_num, new_tree, first)
 
 
-given_numbers = list(map(int, input().split()))
-tree = [0]
-first = given_numbers.copy()
+num_of_lists = int(input())
+lists = []
+for _ in range(num_of_lists):
+    given_numbers = list(map(int, input().split()))
+    lists.append(given_numbers)
 
-result = absolute(given_numbers, tree, first)
-print(result)
+tree = [0]
+results = []
+for given_numbers in lists:
+    first = given_numbers.copy()
+    result = absolute(given_numbers, tree, first)
+    results.append(result)
+
+results = list(map(str, results))
+print("\n".join(results))
