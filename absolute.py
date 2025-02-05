@@ -1,29 +1,21 @@
 def absolute(num):
     c = []
-    final = []
-    start = 0
+    add = 0
+    absolute = 0
+    maximum = 0
     for i in range(len(num)):
         for j in range(len(num[i])):
-            if num[i][j] >= 0:
-                start += num[i][j]
-                c.append(start)
-
-            elif num[i][j] < 0 and j + 1 < len(num[i]):
-                if num[i][j + 1] > 0:
-                    start = abs(num[i][j])
-                    c.append(start)
-
-            elif num[i][j] < 0 and j + 1 < len(num[i]):
-                for a in range(1, len(num[i])):
-                    if num[i][j + a] < 0:
-                        start = num[i][j] + num[i][j + a]
-                if start < 0:
-                    start = abs(start)
-                    c.append(start)
-
-        del c[:-1]
-        final.extend(c)
-        start = 0
+            add += num[i][j]
+            absolute += abs(num[i][j])
+            maximum = max(absolute, add)
+            absolute = maximum
+            add = maximum
+        c.append(maximum)
+        maximum = 0
+        add = 0
+        absolute = 0
+    c = list(map(str, c))
+    final = "\n".join(c)
     print(final)
 
 
@@ -31,5 +23,4 @@ given_numbers = []
 number_of_tests = int(input())
 for i in range(number_of_tests):
     given_numbers.append(list(map(int, input().split())))
-print(given_numbers)
 absolute(given_numbers)
