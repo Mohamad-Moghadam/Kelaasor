@@ -4,16 +4,19 @@ def max_c_value(case):
     if 2 ** len(case) == len(results):
         return max(results)
 
-    c1 = 0
-    c2 = 0
+    c = [0]
     for i in range(len(case)):
-        c1 += case[i]
-        c2 = abs(c2 + case[i])
-        results.append(c1)
-        results.append(c2)
-        if 2**i != len(case):
-            del results[: (2**i) + 1]
-    print(results)
+        for j in range(len(c)):
+            c[j] += case[i]
+            results.extend(c)
+            c[j] -= case[i]
+            c[j] = abs(c[j] + case[i])
+            results.extend(c)
+            print(results)
+            c.extend(results)
+            print(c)
+            del c[: 2**j + 1]
+    print(max(results))
 
 
 num_list = int(input())
