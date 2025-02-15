@@ -12,4 +12,4 @@ class Student:
         elif self.__grade < other_student.__grade:
             print(f"{other_student.__name} has a higher grade. ")
         else:
-            print(f"{self.__name} and {other_student.__name} has the same grades. ")
+            print(f"{self.__name} and {other_student.__name} have the same grades. ")
