@@ -1,15 +1,10 @@
 class Person:
-    def __init__(self, name, age):
+    def __init__(self, name: str, age: int):
         self.__name = name
-        self.__age = age
+        self.age = age
 
     def birthday(self):
-        self.__age += self.__age
+        self.age += 1
 
     def __str__(self):
-        return f"{self.__age.birthday()}"
-
-
-p = Person("Alice", 25)
-p.birthday()
-print(p.age)  # output: 26
+        return f"{self.age}"
