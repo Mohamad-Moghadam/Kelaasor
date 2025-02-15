@@ -13,8 +13,3 @@ class Student:
             print(f"{other_student.__name} has a higher grade. ")
         else:
             print(f"{self.__name} and {other_student.__name} has the same grades. ")
-
-
-s1 = Student("Alice", 90)
-s2 = Student("Bob", 91)
-s1.compare_grade(s2)  # Alice has a higher grade.
