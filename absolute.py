@@ -16,6 +16,7 @@ def max_c_value(case):
             c.extend(results)
             print(c)
             del c[: 2**j + 1]
+        max_c_value(c)
     print(max(results))
 
 

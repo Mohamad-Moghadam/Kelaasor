@@ -14,6 +14,7 @@ def most_common_names():
     ordered_list_f = sorted(female)
     m_counter = Counter(ordered_list_m).most_common(1)
     f_counter = Counter(ordered_list_f).most_common(1)
+    breakpoint()
 
     most_common_males = m_counter[0][0] if m_counter else None
     most_common_females = f_counter[0][0] if f_counter else None
