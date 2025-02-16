@@ -12,13 +12,13 @@ class Robot:
 
     def move_left(self):
         if self.__placement_horizontal > 1:
-            self.__placement_horizontal += 1
+            self.__placement_horizontal -= 1
         else:
             return f"The robot can't get to the left. "
 
     def move_down(self):
         if self.__placement_vertical > 1:
-            self.__placement_vertical += 1
+            self.__placement_vertical -= 1
         else:
             return f"The robot can't get any lower. "
 
@@ -32,10 +32,8 @@ class Robot:
         return f"{self.__placement_horizontal}, {self.__placement_vertical}"
 
 
-r = Robot(5, 5, 2, 2)
+r = Robot(5, 5, 1, 1)
 r.move_up()
 r.move_left()
-r.move_down()
-r.move_right()
-r.move_up()
+r.move_left()
 print(r)
