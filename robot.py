@@ -1,13 +1,12 @@
 class Robot:
     def __init__(self, m: int, n: int, i: int, j: int):
-        self.__sheet_horizontal = m
-        self.__sheet_vertical = n
+        self.__sheet = [m, n]
         self.__placement_horizontal = i
         self.__placement_vertical = j
 
     def move_up(self):
-        if self.__placement_vertical < self.__sheet_vertical:
-            self.__placement_horizontal += 1
+        if self.__placement_vertical < self.__sheet[1]:
+            self.__placement_vertical += 1
         else:
             return f"The robot can't get any higher. "
 
@@ -19,12 +18,12 @@ class Robot:
 
     def move_down(self):
         if self.__placement_vertical > 1:
-            self.__placement_horizontal += 1
+            self.__placement_vertical += 1
         else:
             return f"The robot can't get any lower. "
 
     def move_right(self):
-        if self.__placement_vertical < self.__sheet_vertical:
+        if self.__placement_horizontal < self.__sheet[0]:
             self.__placement_horizontal += 1
         else:
             return f"The robot can't get any higher. "
