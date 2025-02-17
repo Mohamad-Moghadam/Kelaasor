@@ -14,11 +14,14 @@ class Book:
 
 
 class Library:
+    def __init__(self):
+        self.__books = {}
 
-    def add_book(book: Book):
-        books = {}
-        books[book.get_title()] = book.get_author()
+    def add_book(self, book: Book):
+        self.__books[book.get_title()] = book.get_author()
 
 
-Library.add_book(Book("1984", "George Orwell"))
-Library.add_book(Book("To Kill a Mockingbird", "Harper Lee"))
+a = Book("1984", "George Orwell")
+b = Book("To Kill a Mockingbird", "Harper Lee")
+Library.add_book(a)
+Library.add_book(b)

@@ -8,3 +8,11 @@ class Person:
 
     def __str__(self):
         return f"{self.age}"
+
+
+name = input("please enter your name: ")
+age = int(input("please enter your age: "))
+
+p = Person(name, age)
+p.birthday()
+print(p)
