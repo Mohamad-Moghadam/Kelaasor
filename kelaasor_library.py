@@ -20,8 +20,11 @@ class Library:
     def add_book(self, book: Book):
         self.__books[book.get_title()] = book.get_author()
 
+    def list_books(self):
+        print(f"{self.__books}")
 
-a = Book("1984", "George Orwell")
-b = Book("To Kill a Mockingbird", "Harper Lee")
-Library.add_book(a)
-Library.add_book(b)
+
+library = Library()
+library.add_book(Book("1984", "George Orwell"))
+library.add_book(Book("To Kill a Mockingbird", "Harper Lee"))
+library.list_books()
