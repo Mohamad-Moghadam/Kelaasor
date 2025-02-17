@@ -13,3 +13,15 @@ class Student:
             print(f"{other_student.__name} has a higher grade. ")
         else:
             print(f"{self.__name} and {other_student.__name} have the same grades. ")
+
+
+name_1 = input("please enter first student's name: ")
+score_1 = int(input("please enter the first student's score: "))
+
+name_2 = input("please enter first student's name: ")
+score_2 = int(input("please enter the first student's score: "))
+
+s1 = Student(name_1, score_1)
+s2 = Student(name_2, score_2)
+
+s1.compare_grade(s2)
