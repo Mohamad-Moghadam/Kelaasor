@@ -2,8 +2,8 @@ class Teacher:
     def __init__(self, name):
         self.__teacher_name = name
 
-    def change_name(self):
-        self.__teacher_name = input("the new name: ")
+    def change_name(self, new_name):
+        self.__teacher_name = new_name
 
 class Student:
     def __init__(self, name, grades: list=[]):
@@ -43,3 +43,10 @@ class Lesson:
     def show_list(self, zipped):
         for i in self.__students:
             print(f"{i}, {zipped}")
+
+
+t1 = Teacher("Mr_ghodoosi")
+s1 = Student("Mr_Abedini")
+l1 = Lesson(t1, s1)
+
+t1.change_name("Mr_goldoost")
