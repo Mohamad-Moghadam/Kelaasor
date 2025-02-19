@@ -1,17 +1,17 @@
 class Teacher:
     def __init__(self, name):
-        self.__name = name
+        self.__teacher_name = name
 
     def change_name(self):
-        self.__name = input("the new name: ")
+        self.__teacher_name = input("the new name: ")
 
 class Student:
     def __init__(self, name, grades: list=[]):
-        self.__name = name
+        self.__student_name = name
         self.__grades = grades
 
     def name_change(self, new_name):
-        self.__name = new_name
+        self.__student_name = new_name
 
     def add_grade(self, new_grade : int = 0):
         self.__grades.append(new_grade)
@@ -37,7 +37,8 @@ class Lesson:
             listed_grades = input()
             grades_list.extend(listed_grades)
             person.add_grade(listed_grades)
-        zipped = zip(self.__students, grades_list)
+        return zipped = zip(self.__students, grades_list)
 
-    def show_list(self):
-        print()
+    def show_list(self, zipped):
+        for i in self.__students:
+            print(f"{i}, {zipped}")
