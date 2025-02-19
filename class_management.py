@@ -37,7 +37,8 @@ class Lesson:
             listed_grades = input()
             grades_list.extend(listed_grades)
             person.add_grade(listed_grades)
-        return zipped = zip(self.__students, grades_list)
+        zipped = zip(self.__students, grades_list)
+        return zipped
 
     def show_list(self, zipped):
         for i in self.__students:
