@@ -31,7 +31,6 @@ class Lesson:
 
     def grade(self):
         grades_list = []
-        print(self.__students)
         for person in self.__students:
             listed_grades = input()
             grades_list.extend(listed_grades)
@@ -45,13 +44,18 @@ class Lesson:
 
 
 t1 = Teacher("Mr.ghodoosi")
+t2 = Teacher("Mr.goldoost")
 s1 = Student("Mr.Abedini")
+s2 = Student("Mohamad Hossain")
 l1 = Lesson(t1, s1)
 
-t1.change_name("Mr.goldoost")
+t1.change_name("Mr.kani")
 
 s1.name_change("Ms.abedini")
 
 s1.add_grade(10)
 s1.add_grade(15)
 s1.add_grade(20)
+
+l1.change_teacher(t2)
+l1.add_student(s2)
