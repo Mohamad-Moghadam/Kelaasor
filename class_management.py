@@ -10,25 +10,14 @@ class Student:
         self.__name = name
         self.__grades = grades
 
-    def student_changes(self, number: int):
-        if number == 1:
-            print(f"self.__name")
-            s_menu()
-        elif number == 2:
-            self.__name = input("the new name: ")
-            s_menu()
-        elif number == 3:
-            def add_grade(new_grade : int = 0):
-                self.__grades.append(new_grade)
-                s_menu()
-        elif number == 4:
-            for i in range(len(self.__grades)):
-                gpa = sum(self.__grades[i])
+    def name_change(self, new_name):
+        self.__name = new_name
+
+    def add_grade(self, new_grade : int = 0):
+        self.__grades.append(new_grade)
+        for i in range(len(self.__grades)):
+                gpa = (sum(self.__grades[i]))/ len(self.__grades)
                 print(gpa)
-                s_menu()
-
-
-
 
 class Lesson:
     def __init__(self, teacher: Teacher, students: list):
