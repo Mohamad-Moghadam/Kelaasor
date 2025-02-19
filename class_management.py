@@ -24,13 +24,20 @@ class Lesson:
         self.__teacher = teacher
         self.__students = students
 
-    def change_teacher(self):
-        name = input("the new teacher: ")
-        self.__teacher = Teacher(name)
+    def change_teacher(self, new_teacher : Teacher):
+        self.__teacher = new_teacher
 
-    def add_student(self):
-        name = input("new student: ")
-        self.__students.append(Student(name))
+    def add_student(self, new_student: Student):
+        self.__students.append(new_student)
 
     def grade(self):
-        
+        grades_list = []
+        print(self.__students)
+        for person in self.__students:
+            listed_grades = input()
+            grades_list.extend(listed_grades)
+            person.add_grade(listed_grades)
+        zipped = zip(self.__students, grades_list)
+
+    def show_list(self):
+        print()
