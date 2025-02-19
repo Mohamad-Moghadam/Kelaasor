@@ -13,11 +13,10 @@ class Student:
     def name_change(self, new_name):
         self.__student_name = new_name
 
-    def add_grade(self, new_grade : int = 0):
+    def add_grade(self, new_grade : float):
         self.__grades.append(new_grade)
-        for i in range(len(self.__grades)):
-                gpa = (sum(self.__grades[i]))/ len(self.__grades)
-                print(gpa)
+        gpa = (sum(self.__grades))/len(self.__grades)
+        print(gpa)
 
 class Lesson:
     def __init__(self, teacher: Teacher, students: list):
@@ -45,8 +44,14 @@ class Lesson:
             print(f"{i}, {zipped}")
 
 
-t1 = Teacher("Mr_ghodoosi")
-s1 = Student("Mr_Abedini")
+t1 = Teacher("Mr.ghodoosi")
+s1 = Student("Mr.Abedini")
 l1 = Lesson(t1, s1)
 
-t1.change_name("Mr_goldoost")
+t1.change_name("Mr.goldoost")
+
+s1.name_change("Ms.abedini")
+
+s1.add_grade(10)
+s1.add_grade(15)
+s1.add_grade(20)
