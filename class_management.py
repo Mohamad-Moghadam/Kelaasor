@@ -32,7 +32,7 @@ class Lesson:
     def grade(self):
         grades_list = []
         for person in self.__students:
-            listed_grades = input()
+            listed_grades = float(input())
             grades_list.extend(listed_grades)
             person.add_grade(listed_grades)
         zipped = zip(self.__students, grades_list)
@@ -47,7 +47,7 @@ t1 = Teacher("Mr.ghodoosi")
 t2 = Teacher("Mr.goldoost")
 s1 = Student("Mr.Abedini")
 s2 = Student("Mohamad Hossain")
-l1 = Lesson(t1, s1)
+l1 = Lesson(t1, [s1])
 
 t1.change_name("Mr.kani")
 
